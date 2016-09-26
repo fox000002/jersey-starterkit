@@ -3,23 +3,20 @@ apply plugin: 'eclipse'
 apply plugin: 'war'
 
 repositories {
-    mavenCentral()
+    //mavenCentral()
+	maven {
+		url "http://repo2.maven.org/maven2/"
+	}
 }
 
 dependencies {
-	compile "javax.ws.rs:jsr311-api:1.1.1"
-
-
-	compile 'com.sun.jersey:jersey-server:1.16'
-	compile 'com.sun.jersey:jersey-core:1.16'
-	compile 'com.sun.jersey:jersey-client:1.16'
-	compile 'com.sun.jersey:jersey-servlet:1.16'
-	compile 'com.sun.jersey:jersey-json:1.16'
+	compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.23.2'
+	compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.23.2'
 	
-	compile 'com.yammer.metrics:metrics-core:2.2.0'
-	compile 'com.yammer.metrics:metrics-servlet:2.2.0'
-	compile 'com.yammer.metrics:metrics-jersey:2.2.0'
-	compile 'com.yammer.metrics:metrics-graphite:2.2.0'
+	compile 'io.dropwizard.metrics:metrics-core:3.1.0'
+	compile 'io.dropwizard.metrics:metrics-servlet:3.1.0'
+	compile 'io.dropwizard.metrics:metrics-jersey2:3.1.0'
+	compile 'io.dropwizard.metrics:metrics-graphite:3.1.0'
 	
 	compile 'log4j:log4j:1.2.16'
 
